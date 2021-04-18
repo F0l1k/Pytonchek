@@ -1,0 +1,182 @@
+def ZAD1 ():
+        s = []
+        min = 1; max = 1
+        print(
+                '\nMinmax10: Дано целое число N и набор из N целых чисел. Найти номер первого экстремального (то есть минимального или максимального) элемента из данного набора.')
+        print('Введите N (количество значений в массиве):', end=' ')
+        N = int(input())
+        print('Введите массив:', end=' ')
+        for n in range(N):
+                s.append(float(input()))
+
+        for m in range(N):
+                if s[m] < s[min]:
+                        min = m
+                if s[m] > s[max]:
+                        max = m
+        print('Минимальное: ', min+1, '\nМаксимальное: ', max+1)
+def ZAD2 ():
+        s = []
+        min = 0
+        da = 0
+        print('\nMinmax12. Дано целое число N и набор из N чисел. Найти минимальное положительное число из данного набора. Если положительные числа в наборе отсутствуют, то вывести 0.')
+        print('Введите N (количество значений в массиве):', end=' ')
+        N = int(input())
+        print('Введите массив:', end=' ')
+        for n in range(N):
+                s.append(float(input()))
+
+        for m in range(N):
+                if s[m] > -1:
+                        if s[m] < s[min]:
+                                min = m
+                        da += 1
+        if da == 0:
+                s[min] = 0
+        print ('Минимальное положительное число: ', s[min])
+def ZAD3 ():
+        a = 0
+        s = []
+        ss = []
+        print('\nArray61. Дан массив A размера N. Сформировать новый массив B того же раз- мера по следующему правилу: элемент BK равен среднему арифметическо- му элементов массива A с номерами от K до N.')
+        print('Введите N (количество значений в массиве):', end=' ')
+        N = int(input())
+        print('Введите массив:', end=' ')
+        for n in range(N):
+                s.append(float(input()))
+
+        print('Итоговый массив:', end=' ')
+        for nnn in range(N):
+                a += s[nnn]
+        for nn in range(N):
+                delitel = N - nn
+                ss.append(float(a/delitel))
+                print(ss[nn], end=' ')
+                a -= s[nn]
+def ZAD4 ():
+        q = 0
+        s = []
+        print('\nArray111. Дан целочисленный массив размера N. Утроить в нем вхождения всех нечетных чисел.')
+        print('Введите N (количество вводимых значений):', end=' ')
+        N = int(input())
+        print('Введите массив:', end=' ')
+        for n in range(N):
+                s.append(int(input()))
+                a = s[q] % 2
+                if a == 1:
+                        s.append(s[q])
+                        s.append(s[q])
+                        q += 2
+                q += 1
+
+        print('Итоговый массив:', end=' ')
+        for n in range(q):
+                a = s[n]
+                print(a, end=' ')
+def ZAD5 ():
+        print('\nСтакан пустоты наполовину пессимист.')
+def ZAD6 ():
+        print('\n— Я боюсь пустоты.  \n— Душевной?  \n— Та нет, в холодильнике.')
+def ZAD7 ():
+        s = []
+        print('\nString10º. Дана строка. Вывести строку, содержащую те же символы, но расположенные в обратном порядке.')
+        print('Введите N (количество значений в строке):', end=' ')
+        N = int(input())
+        print('Введите строку:', end=' ')
+        for n in range(N):
+                s.append(float(input()))
+
+        print('Строка:', end=' ')
+        for m in range(N):
+                print(s[n], end=' ')
+                n -= 1
+def ZAD8 ():
+        s = []
+        print('\nString11. Дана непустая строка S. Вывести строку, содержащую символы стро- ки S, между которыми вставлено по одному пробелу.')
+        print('Введите N (количество значений в строке):', end=' ')
+        N = int(input())
+        print('Введите строку:', end=' ')
+        for n in range(N):
+                s.append(int(input()))
+
+        print('Строка:', end=' ')
+        for m in range(N):
+                print(s[m], end=' ')
+def ZAD9 ():
+        print('\nFile3. Дано имя файла и вещественные числа A и D. Создать файл вещественных чисел с данным именем и записать в него 10 первых членов арифметической прогрессии с начальным членом A и разностью D: A, A + D, A + 2·D, A + 3·D,	… .')
+        print('Введите А', end=' ')
+        A = float(input())
+        print('Введите D', end=' ')
+        D = float(input())
+        file = open("file.txt", "w")
+        for n in range(10):
+                O = A + (n) * D
+                OO = str(O)
+                file.write(OO)
+                file.write('  ')
+        file.close()
+def ZAD10():
+        n = 1
+        s = []
+        print('\nFile10. Дан файл целых чисел. Создать новый файл, содержащий те же элементы, что и исходный файл, но в обратном порядке.')
+        print('Введите значения (напишите 0.5 для выхода)', end=' ')
+        while n == 1:
+                A = input()
+                if A != "0.5":
+                        s.append(str(A))
+                else:
+                        n = 0
+
+        file1 = open("file1.txt", "w")
+        file1.write(str(s))
+        file1.close()
+
+        file1 = open("file1.txt", "r")
+        file2 = open("file2.txt", "w")
+        q = file1.read()
+        file1.close()
+        N = len(q)-1
+        A = N
+        for m in range(N):
+                P = q[A]
+                if P != ']':
+                        file2.write(P)
+                A -= 1
+        file2.close()
+
+        print(file2)
+
+
+print ('[Матрицу нереально реализовать, я сдался(] Введите номер задачи (1, 2, 3, 4, 7, 8, 9, 10 ):', end=' ')
+id = int(input())
+if id == 1:
+        ZAD1()
+else:
+        if id == 2:
+                ZAD2()
+        else:
+                if id == 3:
+                        ZAD3()
+                else:
+                        if id == 4:
+                                ZAD4()
+                        else:
+                                if id == 5:
+                                        ZAD5()
+                                else:
+                                        if id == 6:
+                                                ZAD6()
+                                        else:
+                                                if id == 7:
+                                                        ZAD7()
+                                                else:
+                                                        if id == 8:
+                                                                ZAD8()
+                                                        else:
+                                                                if id == 9:
+                                                                        ZAD9()
+                                                                else:
+                                                                        if id == 10:
+                                                                                ZAD10()
+                                                                        else:
+                                                                                print('Неверный номер, попробуйте снова')
